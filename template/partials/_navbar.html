@@ -1,0 +1,71 @@
+{% load static %}
+
+<header id="ch-home" class="ch-header">
+  <div class="main-navigation">
+    <nav class="navbar navbar-fixed-top nav-scroll">
+      <div class="container">
+        <div class="row">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-action="#js-navbar-menu"
+              aria-expanded="false"
+            >
+              <span aria-hidden="true" class="icon"></span>
+            </button>
+            <!-- page brand -->
+            <a class="navbar-brand" href="index-2.html"
+              ><img
+                src="{% static 'assets/images/logo.png' %}"
+                alt=""
+                class="img-responsive"
+            /></a>
+          </div>
+          <div class="collapse navbar-collapse" id="js-navbar-menu">
+            <ul
+              class="nav navbar-nav navbar-right ep-mobile-menu"
+              id="navbar-nav"
+            >
+              <li class="active">
+                <a href="{% url 'index'%}">Home</a><span></span>
+              </li>
+              <li><a href="{% url 'about'%}">About</a><span></span></li>
+              <li><a href="{% url 'causes'%}">Causes</a></li>
+              <li><a href="{% url 'event' %}">Event</a></li>
+
+              <li><a href="{% url 'galary' %}">Gallery</a><span></span></li>
+
+              <li><a href="{% url 'blog' %}">Blog </a></li>
+
+              <li><a href="{% url 'contact' %}">Contact</a><span></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- /.navbar -->
+  </div>
+</header>
+<!-- Mobile Menu-->
+<div class="menu-spacing visible-xs">
+  <div class="mobile-menu-area visible-xs visible-sm">
+    <div class="mobile-menu">
+      <nav id="mobile-menu-active">
+        <ul class="main">
+          <li><a class="main-a" href="index-2.html">Home</a></li>
+          <li><a class="main-a" href="about.html">About</a></li>
+          <li><a href="ca.html">Causes </a></li>
+
+          <li><a href="event-details.html">Events </a></li>
+
+          <li><a href="blog-details.html">Blog </a></li>
+
+          <li><a class="main-a" href="index-2.html#ch-gallery">Gallery</a></li>
+          <li><a class="main-a" href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,180 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<section class="subpage header-section">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="sub-header-content">
+        <div class="col-md-6">
+          <h4>Donation Causes</h4>
+        </div>
+        <div class="col-md-6 subpage-nav">
+          <ol class="breadcrumb">
+            <li><a href="index-2.html">Home</a></li>
+            <li><a href="causes-grid.html">Causes</a></li>
+            <li class="active">Causes Grid</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+        |========================
+        |  FOOTER
+        |========================
+        -->
+
+<section class="section ch-causes ch-donation-causes-grid" id="ch-causes">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="each-causes wow fadeIn" data-wow-delay="0.3s">
+        {% if causes %} {% for cause in causes %}
+        <div class="col-md-4 col-sm-6">
+          <div class="cause-inner white-bg shadow">
+            <img
+              style="height:250px; width400px"
+              src="{{ cause.causes_photo.url }}"
+              alt=""
+              class="img-responsive"
+            />
+            <div class="cause-inner-content">
+              <h4>{{cause.title}}</h4>
+              <div class="fund-circle">
+                <span class="raised"
+                  >{{cause.current}}:
+                  <span class="amount main-color">{{cause.total }}</span></span
+                >
+                <span
+                  >Goal:
+                  <span class="amount main-color">{{cause.total}}</span></span
+                >
+              </div>
+              <span class="progress-val">56%</span>
+              <div class="fund-process">
+                <div class="progress">
+                  <div class="progress-bar" style="width: 80%"></div>
+                </div>
+              </div>
+              <p>{{cause.description }}</p>
+              <a href="#" class="btn btn-border"> Donate Now</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %} {% else %}
+        <div class="center bg-warmimg">No CAUSES FOUND</div>
+        {% endif %}
+      </div>
+      <div class="clearfix"></div>
+      <nav aria-label="Page navigation" class="ch-pagination">
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous"
+              ><span aria-hidden="true">Prev</span></a
+            >
+          </li>
+          <li class="active">
+            <a href="#">1 <span class="sr-only">(current)</span></a>
+          </li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li>
+            <a href="#" aria-label="Next"
+              ><span aria-hidden="true">Next</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!--
+        |========================
+        |  join
+        |========================
+        -->
+<section class="section ch-join main-color-bg">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="table-display">
+        <div
+          class="join-content col-md-8 wow fadeInRight"
+          data-wow-delay="0.2s"
+        >
+          <h3>want to donate for help the world ?</h3>
+          <p>
+            Phasellus et diam nec massa lobortis venenatis. Nullam varius enim
+            at eros ullamcorper semper. Sed diam metus, facilisis eu.
+          </p>
+        </div>
+        <div class="join-btn col-md-4 wow fadeInLeft" data-wow-delay="0.3s">
+          <a href="#" class="btn pull-right btn-fill">Donate Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  CLIENT
+        |========================
+        -->
+<section class="section ch-client">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="section-title wow fadeIn" data-wow-delay="0.2s">
+        <h2>Featured <span>Clients</span></h2>
+        <span>
+          Get a head-start with one of the included page demos or start
+          experimenting.</span
+        >
+      </div>
+      <div class="ch-client-logos col-xs-12">
+        <ul>
+          <li class="wow fadeInUp" data-wow-delay="0.3s">
+            <img
+              src="{% static 'assets/images/fc1.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.5s">
+            <img
+              src="{% static 'assets/images/fc2.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.7s">
+            <img
+              src="{% static 'assets/images/fc3.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.9s">
+            <img
+              src="{% static 'assets/images/fc4.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="1.0s">
+            <img
+              src="{% static 'assets/images/fc5.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {% include 'partials/_contact.html'%}
+</section>
+{% endblock %}

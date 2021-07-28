@@ -1,0 +1,174 @@
+{% extends 'base.html'%} {% load static %} {% block content %}
+<section class="subpage header-section">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="sub-header-content">
+        <div class="col-md-6">
+          <h4>Blog</h4>
+        </div>
+        <div class="col-md-6 subpage-nav">
+          <ol class="breadcrumb">
+            <li><a href="index-2.html">Home</a></li>
+            <li><a href="blog-grid.html">Blog</a></li>
+            <li class="active">Blog Grid</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  BLOG CONTENT
+        |========================
+        -->
+<section class="section ch-blog blog-grid" id="ch-blog">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="each-blog wow fadeIn" data-wow-delay="0.2s">
+        
+{% if blog %}
+{% for blogs in blog %}
+    <div class="col-md-4 col-sm-6">
+          <div class="blog-inner item shadow">
+            <div class="blog-banner">
+              <img
+              style="height:250px; width:400px"
+                src="{{ blogs.blog_photo.url}}"
+                alt=""
+                class="img-responsive"
+              />
+              <span class="date">{{ blogs.blog_date}}</span>
+            </div>
+            <div class="blog-content">
+              <h4>{{blogs.title}}</h4>
+              <p>
+                 </p>
+              <a href="{% url 'blogdetail' blogs.id %}" class="btn btn-border"> Read More</a>
+            </div>
+          </div>
+        </div>
+
+{% endfor %}
+       
+      
+{% else %}
+<div class="center bg-warning"> No blog post Available</div
+{% endif %}
+
+      
+
+        <div class="clearfix"></div>
+        <nav aria-label="Page navigation" class="ch-pagination">
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous"
+                ><span aria-hidden="true">Prev</span></a
+              >
+            </li>
+            <li class="active">
+              <a href="#">1 <span class="sr-only">(current)</span></a>
+            </li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+              <a href="#" aria-label="Next"
+                ><span aria-hidden="true">Next</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+        |========================
+        |  join
+        |========================
+        -->
+<section class="section ch-join main-color-bg">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="table-display">
+        <div
+          class="join-content col-md-8 wow fadeInRight"
+          data-wow-delay="0.2s"
+        >
+          <h3>want to donate for help the world ?</h3>
+          <p>
+            Phasellus et diam nec massa lobortis venenatis. Nullam varius enim
+            at eros ullamcorper semper. Sed diam metus, facilisis eu.
+          </p>
+        </div>
+        <div class="join-btn col-md-4 wow fadeInLeft" data-wow-delay="0.5s">
+          <a href="#" class="btn pull-right btn-fill">Donate Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  CLIENT
+        |========================
+        -->
+<section class="section ch-client">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="section-title wow fadeIn" data-wow-delay="0.2s">
+        <h2>Featured <span>Clients</span></h2>
+        <span>
+          Get a head-start with one of the included page demos or start
+          experimenting.</span
+        >
+      </div>
+      <div class="ch-client-logos col-xs-12">
+        <ul>
+          <li class="wow fadeInUp" data-wow-delay="0.3s">
+            <img
+              src="{% static 'assets/images/fc1.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.5s">
+            <img
+              src="{% static 'assets/images/fc2.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.7s">
+            <img
+              src="{% static 'assets/images/fc3.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.9s">
+            <img
+              src="{% static 'assets/images/fc4.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="1.0s">
+            <img
+              src="{% static 'assets/images/fc5.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {% include 'partials/_contact.html'%}
+</section>
+{% endblock %}

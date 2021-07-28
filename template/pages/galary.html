@@ -1,0 +1,186 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!--
+        |========================
+        |  GALLERY
+        |========================
+        -->
+<section class="section ch-gallery" id="ch-gallery">
+  <div class="container-fluid">
+    <div class="row section-separator">
+      <div class="section-title wow fadeIn" data-wow-delay="0.2s">
+        <h2>Our <span>Gallery</span></h2>
+        <p>
+          Sed diam metus, facilisis eu diam sit amet pulvinar dictum quam odio
+          lorem
+        </p>
+      </div>
+      <div class="part-1">
+        <div class="project-loader-backButton">
+          <div class="col-xs-12 grid-paddng">
+            <div class="row">
+              <div
+                class="ch-grid project-gallery wow fadeIn"
+                id="project-gallery"
+                data-wow-delay="0.2s"
+              >
+                {% if galary %} {% for gal in galary %}
+                <div class="ch-grid-item col-md-3 col-sm-6">
+                  <figure>
+                    <img
+                      src="{{gal.galary.url}}"
+                      alt=""
+                      class="img-responsive"
+                    />
+                    <figcaption>
+                      <span class="icon flaticon-signs"></span>
+                      <h4 class="title">Title goes here</h4>
+                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
+                      <a
+                        href="{{gal.galary.url}}"
+                        class="view-project-detail single_image"
+                      ></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                {% endfor %} {% else %}
+                <div class="center bg-warmimg">No GALARY FOUND</div>
+                {% endif %}
+
+                <!-- End: .each-item -->
+
+                <!-- End: .each-item -->
+              </div>
+              <!-- End: .ch-grid -->
+            </div>
+            <!-- End: .ch-grid -->
+          </div>
+        </div>
+        <!-- End: .row -->
+      </div>
+      <!-- End: .part-1 -->
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  MISSION
+        |========================
+        -->
+<section class="section ch-mission" id="ch-mission">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="section-title wow fadeIn" data-wow-delay="0.2s">
+        <h2>Our <span>Mission</span></h2>
+        <p>
+          Sed cursus elementum arcu vitae mollis. Curabitur vehicula egestas
+          libero.
+        </p>
+      </div>
+      <div class="ch-mission-content">
+        <div
+          class="col-md-4 col-sm-6 wow fadeInRight mission-item"
+          data-wow-delay="0.2s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-3 icon">
+              <i class="fa main-color flaticon-book"></i>
+            </div>
+            <div class="col-md-9 col-sm-9 padding-left-o">
+              <h4 class="margin-top-o">Charity for education</h4>
+              <p>
+                Phasellus et diam nec massa lobortis venenatis nullam varius.
+              </p>
+              <a href="#" class="main-color">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-4 col-sm-6 wow fadeInRight mission-item"
+          data-wow-delay="0.4s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-3 icon">
+              <i class="fa main-color flaticon-food"></i>
+            </div>
+            <div class="col-md-9 col-sm-9 padding-left-o">
+              <h4 class="margin-top-o">Feed for hungry child</h4>
+              <p>
+                Phasellus et diam nec massa lobortis venenatis nullam varius.
+              </p>
+              <a href="#" class="main-color">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-4 col-sm-6 wow fadeInRight mission-item"
+          data-wow-delay="0.6s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-3 icon">
+              <i class="fa main-color flaticon-internet"></i>
+            </div>
+            <div class="col-md-9 col-sm-9 padding-left-o">
+              <h4 class="margin-top-o">Home for the homeless</h4>
+              <p>
+                Phasellus et diam nec massa lobortis venenatis nullam varius.
+              </p>
+              <a href="#" class="main-color">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-4 col-sm-6 wow fadeInRight mission-item"
+          data-wow-delay="0.3s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-3 icon">
+              <i class="fa main-color flaticon-weather"></i>
+            </div>
+            <div class="col-md-9 col-sm-9 padding-left-o">
+              <h4 class="margin-top-o">Clean water for people</h4>
+              <p>
+                Phasellus et diam nec massa lobortis venenatis nullam varius.
+              </p>
+              <a href="#" class="main-color">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-4 col-sm-6 wow fadeInRight mission-item"
+          data-wow-delay="0.5s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-3 icon">
+              <i class="fa main-color flaticon-summer"></i>
+            </div>
+            <div class="col-md-9 col-sm-9 padding-left-o">
+              <h4 class="margin-top-o">Charity for entertain</h4>
+              <p>
+                Phasellus et diam nec massa lobortis venenatis nullam varius.
+              </p>
+              <a href="#" class="main-color">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-4 col-sm-6 wow fadeInRight mission-item"
+          data-wow-delay="0.8s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-3 icon">
+              <i class="fa flaticon-present main-color"></i>
+            </div>
+            <div class="col-md-9 col-sm-9 padding-left-o">
+              <h4 class="margin-top-o">Heart to heart event</h4>
+              <p>
+                Phasellus et diam nec massa lobortis venenatis nullam varius.
+              </p>
+              <a href="#" class="main-color">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

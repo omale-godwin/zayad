@@ -1,0 +1,291 @@
+{% extends 'base.html'%} {% load static %} {% block content %}
+<section class="subpage header-section">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="sub-header-content">
+        <div class="col-md-6">
+          <h4>{{events.title}}</h4>
+        </div>
+        <div class="col-md-6 subpage-nav">
+          <ol class="breadcrumb">
+            <li><a href="index-2.html">Home</a></li>
+            <li><a href="event-grid.html">Events</a></li>
+            <li class="active">Event Single</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+        |========================
+        |  EVENT CONTENT
+        |========================
+        -->
+
+<section class="section ch-event ch-donation-event-list" id="ch-event">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="each-causes wow fadeIn" data-wow-delay="0.3s">
+        <div class="col-md-12 col-sm-12 ch-event-item-details">
+          <div class="row">
+            <div class="white-bg shadow">
+              <div class="event-content">
+                <h2>{{events.title}}</h2>
+                <div class="schedule">
+                  <span class="event-time"
+                    ><i class="fa fa-clock-o main-color"></i> {{events.start_time}} -
+                    {{event.end_time}}</span
+                  >
+                  <span class="event-place"
+                    ><i class="fa fa-map-marker main-color"></i> kastina state
+                    </span
+                  >
+                </div>
+                <a href="{% url 'event'%}" class="btn btn-border"> All Events</a>
+              </div>
+              <img
+              style="height:450px; width:100%"
+                src="{{events.event_photo.url}}"
+                alt=""
+                class="img-responsive"
+              />
+              <div class="detail-content">
+                <p>
+                  {{events.description}}
+                </p>
+                <p>
+         {{events.description}}
+                </p>
+                <div class="row">
+                  <div class="event-schedule col-md-6 col-sm-6">
+                    <h5 class="main-color">Event Details</h5>
+                    <div class="date">
+                      <strong>Date</strong>
+                      <span>{{events.event_date}}</span>
+                    </div>
+                    <div class="time">
+                      <strong>Time</strong>
+                      <span>{{events.start_time}} -
+                  {{events.end_time}}</span>
+                    </div>
+                    <div class="event-category">
+                      <strong>Event Category</strong>
+                      <span>Charity</span>
+                    </div>
+                  </div>
+                  <div class="venue-schedule col-md-6 col-sm-6">
+                    <h5 class="main-color">Event Location</h5>
+                    <div class="venue">
+                      <strong>Venue</strong>
+                      <span>{{events.venue}}</span>
+                    </div>
+                    <div class="location">
+                      <strong> Event Location</strong>
+                      <span>{{events.event_l}}</span>
+                    </div>
+                    <div class="phone">
+                      <strong>Phone Number</strong>
+                      <span>{{events.phone}}</span>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  Voluptatem accusantium doloremque laudantium, totam rem
+                  aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                  architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                  voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                  sed quia consequuntur magni dolores eos qui ratione voluptatem
+                  sui nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
+                  dolor sit amet.
+                </p>
+
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudantium, totam rem aperiam, eaque
+                  ipsa quae ab illo inventore veritatis et quasi architecto
+                  beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
+                  quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                  consequ- untur magni dolores eos qui ratione voluptatem sequi
+                  nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
+                  dolor sit amet, consectetur, adipisci velit, sed quia non
+                  numquam eius modi tempora incidunt ut labore et dolore magnam
+                  aliquam quaerat voluptatem.
+                </p>
+                <p>
+                  Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                  corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                  consequatur? Quis autem vel eum iure reprehenderit qui in ea
+                  voluptate velit esse quam nihil molestiae consequatur, vel
+                  illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                </p>
+
+                <p>
+                  Voluptatem accusantium doloremque laudantium, totam rem
+                  aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                  architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                  voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                  sed quia consequuntur magni dolores eos qui ratione voluptatem
+                  sui nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
+                  dolor sit amet.
+                </p>
+
+                <p>
+ {{events.description}}
+                </p>
+                <p>
+                  Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                  corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                  consequatur? Quis autem vel eum iure reprehenderit qui in ea
+                  voluptate velit esse quam nihil molestiae consequatur, vel
+                  illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  join
+        |========================
+        -->
+<section class="section ch-join main-color-bg">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="table-display">
+        <div
+          class="join-content col-md-8 wow fadeInRight"
+          data-wow-delay="0.2s"
+        >
+          <h3>want to donate for help the world ?</h3>
+          <p>
+            Phasellus et diam nec massa lobortis venenatis. Nullam varius enim
+            at eros ullamcorper semper. Sed diam metus, facilisis eu.
+          </p>
+        </div>
+        <div class="join-btn col-md-4 wow fadeInLeft" data-wow-delay="0.5s">
+          <a href="#" class="btn pull-right btn-fill">Donate Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  CLIENT
+        |========================
+        -->
+<section class="section ch-client">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="section-title wow fadeIn" data-wow-delay="0.2s">
+        <h2>Featured <span>Clients</span></h2>
+        <span>
+          Get a head-start with one of the included page demos or start
+          experimenting.</span
+        >
+      </div>
+      <div class="ch-client-logos col-xs-12">
+        <ul>
+          <li class="wow fadeInUp" data-wow-delay="0.3s">
+            <img
+              src="{% static 'assets/images/fc1.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.5s">
+            <img
+              src="{% static 'assets/images/fc2.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.7s">
+            <img
+              src="{% static 'assets/images/fc3.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.9s">
+            <img
+              src="{% static 'assets/images/fc4.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="1.0s">
+            <img
+              src="{% static 'assets/images/fc5.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% include 'partials/_contact.html' %}
+    <div class="row">
+      <div
+        class="col-md-10 col-sm-12 col-xs-12 center wow fadeIn"
+        data-wow-delay="0.2s"
+      >
+        <div class="section-title">
+          <h2>Contact <span>Us</span></h2>
+        </div>
+        <form id="contactForm" data-toggle="validator">
+          <div class="row">
+            <div id="msgSubmit" class="h3 text-center hidden"></div>
+            <div class="form-group col-md-6">
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                id="name"
+                placeholder="Name*"
+                required=""
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="email"
+                placeholder="Email*"
+                required=""
+              />
+            </div>
+            <div class="form-group col-xs-12">
+              <textarea
+                name="message"
+                class="form-control input-lg"
+                id="message"
+                rows="6"
+                placeholder="Message*"
+              ></textarea>
+            </div>
+            <div class="btn-form col-xs-12">
+              <button
+                type="submit"
+                class="btn btn-fill disabled"
+                id="form-submit"
+              >
+                Send Message
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>}
+</section>
+{% endblock %}

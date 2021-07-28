@@ -1,0 +1,183 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- TITLE OF SITE -->
+    <title>Charity Project</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="description" content="app landing page template" />
+    <meta
+      name="keywords"
+      content="app, landing page, gradient background, image background, video background, template, responsive, bootstrap"
+    />
+    <meta name="developer" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <!-- FAV AND ICONS   -->
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'assets/images/apple-icon.png' %}"
+    />
+    <link
+      rel="shortcut icon"
+      sizes="72x72"
+      href="{% static 'assets/images/apple-icon-72x72.png' %}"
+    />
+    <link
+      rel="shortcut icon"
+      sizes="114x114"
+      href="{% static 'assets/images/apple-icon-114x114.png' %}"
+    />
+
+    <!-- GOOGLE FONTS -->
+    <link
+      href="../fonts.googleapis.com/css3b38.css' %}?family=Khula:300,400,600,700,800%7CRoboto:300,400,400i,500,700,900"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/plugins/css/icon-font.min.css' %}"
+    />
+
+    <!-- FONT ICONS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/icons/font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    />
+
+    <!-- Custom Icon Font -->
+    <link rel="stylesheet" href="{% static 'assets/fonts/flaticon.css' %}" />
+    <!-- Bootstrap-->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/plugins/css/bootstrap.min.css' %}"
+    />
+    <!-- Fancybox-->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/plugins/css/jquery.fancybox.css' %}"
+    />
+    <!-- Animation -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/plugins/css/animate.css' %}"
+    />
+    <!-- wow -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/css/owl.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/plugins/css/slider.css' %}"
+    />
+
+    <!-- COUSTOM CSS link  -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
+
+    <!-- COLOR -->
+    <!--<link rel="stylesheet" href="{% static 'assets/css/color/color-1.css' %}">  -->
+    <!--<link rel="stylesheet" href="{% static 'assets/css/color/color-2.css' %}">-->
+    <!--<link rel="stylesheet" href="{% static 'assets/css/color/color-3.css' %}">-->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/color/color-4.css' %}"
+      id="color-scheme"
+    />
+    <!--<link rel="stylesheet" href="{% static 'assets/css/color/color-5.css' %}"> -->
+    <!--<link rel="stylesheet" href="{% static 'assets/css/color/color-6.css' %}">-->
+
+    <!--[if lt IE 9]>
+      <script src="js/plagin-js/html5shiv.js' %}"></script>
+      <script src="js/plagin-js/respond.min.js' %}"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!--
+        |========================
+        |  NAV
+        |========================
+        -->
+    {% include 'partials/_navbar.html'%} {% block content%} {% endblock %}
+    <!--
+        |========================
+        |   SLIDER CONTENT
+        |========================
+        -->
+
+    {% include 'partials/_footer.html' %}
+
+    <!--
+        |========================
+        |      Script
+        |========================
+        -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Java script-->
+    <script>
+      const paymentForm = document.getElementById("paymentForm");
+      paymentForm.addEventListener("submit", payWithPaystack, false);
+      function payWithPaystack(e) {
+        e.preventDefault();
+        let handler = PaystackPop.setup({
+          key: "pk_test_xxxxxxxxxx", // Replace with your public key
+          email: document.getElementById("email-address").value,
+          amount: document.getElementById("amount").value * 100,
+          ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+          // label: "Optional string that replaces customer email"
+          onClose: function () {
+            alert("Window closed.");
+          },
+          callback: function (response) {
+            let message = "Payment complete! Reference: " + response.reference;
+            alert(message);
+          },
+        });
+        handler.openIframe();
+      }
+    </script>
+
+    <script>
+      setTimeout(() => {
+        document.getElementById("message").fadeOut("slow");
+      }, 300);
+    </script>
+
+    <!-- jquery -->
+    <script src="{% static 'assets/plugins/js/jquery-1.11.3.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'assets/plugins/js/bootstrap.min.js' %}"></script>
+    <!-- mean menu nav-->
+    <script src="{% static 'assets/plugins/js/meanmenu.js' %}"></script>
+    <!-- ajaxchimp -->
+    <script src="{% static 'assets/plugins/js/jquery.ajaxchimp.min.js' %}"></script>
+    <!-- wow -->
+    <script src="{% static 'assets/plugins/js/wow.min.js' %}"></script>
+    <!-- Fancybox js-->
+    <script src="{% static 'assets/plugins/js/jquery.fancybox.pack.js' %}"></script>
+    <!-- Owl carousel-->
+    <script src="{% static 'assets/plugins/js/owl.carousel.js' %}"></script>
+    <!-- Image Load-->
+    <script src="../npmcdn.com/imagesloaded%404.1.4/imagesloaded.pkgd.min.js' %}"></script>
+    <!--validator -->
+    <script src="{% static 'assets/plugins/js/validator.min.js' %}"></script>
+    <!--smooth scroll-->
+    <script src="{% static 'assets/plugins/js/smooth-scroll.js' %}"></script>
+    <!-- init -->
+    <script src="{% static 'assets/js/init.js' %}"></script>
+
+    <!-- 
+        |========================
+        |     STYLE SWITCH
+        |========================
+        -->
+    <script src="{% static 'assets/plugins/js/style-switch.js' %}"></script>
+  </body>
+
+  <!-- Mirrored from charitus-html.xoothemes.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Jul 2021 12:43:41 GMT -->
+</html>

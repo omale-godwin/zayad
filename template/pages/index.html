@@ -1,0 +1,830 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section style="" class="header-slider" id="header-slider">
+  <div class="animation-slides owl-carousel owl-theme" id="animation-slide">
+    <!--Slide 1-->
+    <div
+      style="background-image: url(/static/assets/images/g11.jpg)"
+      class="item"
+    >
+      <div class="slide-table">
+        <div class="slide-tablecell">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7">
+                <div class="slide-text">
+                  <h1>we need your help</h1>
+                  <p>
+                    Phasellus et diam nec massa lobortis venenatis. Nullam
+                    varius enim at eros semper. Sed diam metus, facilisis eu
+                    diam sit amet.
+                  </p>
+                  <div class="slide-buttons">
+                  <button type="button" onclick="payWithPaystack()" class="slide-btn btn btn-border">Donate Now </button> 
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Slide 2-->UPCOMING EVENTS
+    <div
+      style="background-image: url(/static/assets/images/ch-slide2.jpg)"
+      class="item"
+    >
+      <div class="slide-table">
+        <div class="slide-tablecell">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7">
+                <div class="slide-text">
+                  <h1>Lorem Ipsum is simply</h1>
+                  <p>
+                    Miker Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s
+                  </p>
+                  <div class="slide-buttons">
+                    <a href="#" class="slide-btn btn btn-border"
+                      >Download Now</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+  
+     
+    </div>
+  </div>
+
+  
+</section>
+<section class="section bg-2" id="ch-service">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="col-md-4 col-sm-6 wow fadeInRight" data-wow-delay="0.3s">
+        <div class="each-features">
+          <div class="features-inner">
+            <div class="each-details center">
+              <i class="fa flaticon-money"></i>
+              <h3>Donation</h3>
+              <p>Pulvinar dictum quam odio lorem...</p>
+            </div>
+            <div class="features-content col-xs-8">
+              <h3 class="title">Send Donation</h3>
+              <p class="date">
+                Sed diam metus, facilisis eu diam sit amet pulvinar dictum quam
+                odio lorem
+              </p>
+              <a href="#" class="btn btn-fill">See More</a>
+            </div>
+          </div>
+          <!-- End: .features-inner -->
+        </div>
+        <!-- End: .each-features -->
+      </div>
+      <div class="col-md-4 col-sm-6 wow fadeInRight" data-wow-delay="0.5s">
+        <div class="each-features">
+          <div class="features-inner">
+            <div class="each-details center">
+              <i class="fa flaticon-graphic"></i>
+              <h3>FUNDRAISE</h3>
+              <p>Pulvinar dictum quam odio lorem...</p>
+            </div>
+            <div class="features-content col-xs-8">
+              <h3 class="title">Send Donation</h3>
+              <p class="date">
+                Sed diam metus, facilisis eu diam sit amet pulvinar dictum quam
+                odio lorem
+              </p>
+              <a href="#" class="btn btn-fill">See More</a>
+            </div>
+          </div>
+          <!-- End: .features-inner -->
+        </div>
+        <!-- End: .each-features -->
+      </div>
+      <div class="col-md-4 col-sm-6 wow fadeInRight" data-wow-delay="0.8s">
+        <div class="each-features">
+          <div class="features-inner">
+            <div class="each-details center">
+              <i class="fa flaticon-profile"></i>
+              <h3>VOLUNTEERS</h3>
+              <p>Pulvinar dictum quam odio lorem...</p>
+            </div>
+            <div class="features-content col-xs-8">
+              <h3 class="title">Send Donation</h3>
+              <p class="date">
+                Sed diam metus, facilisis eu diam sit amet pulvinar dictum quam
+                odio lorem
+              </p>
+              <a href="#" class="btn btn-fill">See More</a>
+            </div>
+          </div>
+          <!-- End: .features-inner -->
+        </div>
+        <!-- End: .each-features -->
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  CAUSES
+        |========================
+        -->
+<section
+  class="section ch-causes main-color-bg ch-donation-causes-grid"
+  id="ch-causes"
+>
+  <div class="container">
+    <div class="row section-separator">
+      <div class="section-title wow fadeIn" data-wow-delay="0.2s">
+        <h2>Causes of donation</h2>
+        <p>
+          Sed diam metus facilisis eu. Sit amet pulvinar dictum quam odio lorem
+        </p>
+      </div>
+      <div class="each-causes wow fadeIn" data-wow-delay="0.3s">
+        {% if causes %} {% for cause in causes %}
+        <div class="col-md-4 col-sm-6">
+          <div class="cause-inner white-bg shadow">
+            <img
+              style="height:250px; width400px"
+              src="{{ cause.causes_photo.url }}"
+              alt=""
+              class="img-responsive"
+            />
+            <div class="cause-inner-content">
+              <h4>{{cause.title}}</h4>
+              <div class="fund-circle">
+                <span class="raised"
+                  >{{cause.current}}:
+                  <span class="amount main-color">{{cause.total }}</span></span
+                >
+                <span
+                  >Goal:
+                  <span class="amount main-color">{{cause.total}}</span></span
+                >
+              </div>
+              <span class="progress-val">56%</span>
+              <div class="fund-process">
+                <div class="progress">
+                  <div class="progress-bar" style="width: 80%"></div>
+                </div>
+              </div>
+              <p>{{cause.description }}</p>
+              <button  onclick="payWithPaystack()" class="btn btn-border"> Donate Now</button>
+            </div>
+          </div>
+        </div>
+        {% endfor %} {% else %}
+        <div class="center bg-warmimg">No CAUSES FOUND</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  EVENT
+        |========================
+        -->
+<section class="section ch-event event-grid" id="ch-events">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="section-title wow fadeIn" data-wow-delay="0.2s">
+        <h2>Upcoming <span>Events</span></h2>
+        <p>
+          Sed diam metus facilisis eu. Sit amet pulvinar dictum quam odio lorem
+        </p>
+      </div>
+      <div class="each-events wow fadeIn" data-wow-delay="0.3s">
+        {% if events %} {% for gal in events %}
+        <div class="col-md-4 col-sm-6">
+          <div class="event-inner item shadow">
+            <div class="event-banner">
+              <img
+                style="height: 250px; width: 400px"
+                src="{{gal.event_photo.url}}"
+                alt=""
+                class="img-responsive"
+              />
+              <span class="date">{{gal.event_date}}</span>
+            </div>
+            <div class="event-content">
+              <h4>{{gal.title}}</h4>
+              <div class="schedule">
+                <span class="event-time"
+                  ><i class="fa fa-clock-o main-color"></i>{{gal.start_time}} -
+                  {{gal.end_time}}</span
+                >
+                <span class="event-place"
+                  ><i class="fa fa-map-marker main-color"></i> los angeles</span
+                >
+              </div>
+              <p>{{gal.desc}}</p>
+              <a href="{% url 'eventdetail' gal.id %}" class="btn btn-border">
+                Read More</a
+              >
+            </div>
+          </div>
+        </div>
+        {% endfor %} {% else %}
+        <div class="center bg-warmimg">No EVENT FOUND</div>
+        {% endif %}
+
+        <div class="clearfix"></div>
+        <nav aria-label="Page navigation" class="ch-pagination">
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous"
+                ><span aria-hidden="true">Prev</span></a
+              >
+            </li>
+            <li class="active">
+              <a href="#">1 <span class="sr-only">(current)</span></a>
+            </li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+              <a href="#" aria-label="Next"
+                ><span aria-hidden="true">Next</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  JOIN
+        |========================
+        -->
+<section class="section ch-join main-color-bg">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="table-display">
+        <div
+          class="join-content col-md-8 wow fadeInRight"
+          data-wow-delay="0.3s"
+        >
+          <h3>Ready to become a volenteer?</h3>
+          <p>
+            Phasellus et diam nec massa lobortis venenatis. Nullam varius enim
+            at eros ullamcorper semper. Sed diam metus, facilisis eu.
+          </p>
+        </div>
+        <div class="join-btn col-md-4 wow fadeInLeft" data-wow-delay="0.3s">
+          <a href="#" class="btn pull-right btn-fill">Join Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  GALLERY
+        |========================
+        -->
+<section class="section ch-gallery" id="ch-gallery">
+  <div class="container-fluid">
+    <div class="row section-separator">
+      <div class="section-title wow fadeIn" data-wow-delay="0.2s">
+        <h2>Our <span>Gallery</span></h2>
+        <p>
+          Sed diam metus, facilisis eu diam sit amet pulvinar dictum quam odio
+          lorem
+        </p>
+      </div>
+      <div class="part-1">
+        <div class="project-loader-backButton">
+          <div class="col-xs-12 grid-paddng">
+            <div class="row">
+              <div
+                class="ch-grid project-gallery wow fadeIn"
+                id="project-gallery"
+                data-wow-delay="0.2s"
+              >
+                <div class="ch-grid-item col-md-3 col-sm-6">
+                  <figure>
+                    <img
+                      src="{% static 'assets/images/gl-1.jpg' %}"
+                      alt=""
+                      class="img-responsive"
+                    />
+                    <figcaption>
+                      <span class="icon flaticon-signs"></span>
+                      <h4 class="title">Title goes here</h4>
+                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
+                      <a
+                        href="{% static 'assets/images/gl-1.jpg' %}"
+                        class="view-project-detail single_image"
+                      ></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!-- End: .each-item -->
+                <div class="ch-grid-item col-md-3 col-sm-6">
+                  <figure>
+                    <img
+                      src="{% static 'assets/images/gl-2.jpg' %}"
+                      alt=""
+                      class="img-responsive"
+                    />
+                    <figcaption>
+                      <span class="icon flaticon-signs"></span>
+                      <h4 class="title">Title goes here</h4>
+                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
+                      <a
+                        href="{% static 'assets/images/gl-2.jpg' %}"
+                        class="view-project-detail single_image"
+                      ></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!-- End: .each-item -->
+                <div class="ch-grid-item col-md-3 col-sm-6">
+                  <figure>
+                    <img
+                      src="{% static 'assets/images/gl-3.jpg' %}"
+                      alt=""
+                      class="img-responsive"
+                    />
+                    <figcaption>
+                      <span class="icon flaticon-signs"></span>
+                      <h4 class="title">Title goes here</h4>
+                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
+                      <a
+                        href="{% static 'assets/images/gl-3.jpg' %}"
+                        class="view-project-detail single_image"
+                      ></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!-- End: .each-item -->
+                <div class="ch-grid-item col-md-3 col-sm-6">
+                  <figure>
+                    <img
+                      src="{% static 'assets/images/gl-4.jpg' %}"
+                      alt=""
+                      class="img-responsive"
+                    />
+                    <figcaption>
+                      <span class="icon flaticon-signs"></span>
+                      <h4 class="title">Title goes here</h4>
+                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
+                      <a
+                        href="{% static 'assets/images/gl-4.jpg' %}"
+                        class="view-project-detail single_image"
+                      ></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!-- End: .each-item -->
+                <div class="ch-grid-item col-md-3 col-sm-6">
+                  <figure>
+                    <img
+                      src="{% static 'assets/images/gl-5.jpg' %}"
+                      alt=""
+                      class="img-responsive"
+                    />
+                    <figcaption>
+                      <span class="icon flaticon-signs"></span>
+                      <h4 class="title">Title goes here</h4>
+                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
+                      <a
+                        href="{% static 'assets/images/gl-5.jpg' %}"
+                        class="view-project-detail single_image"
+                      ></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!-- End: .each-item -->
+                <div class="ch-grid-item col-md-3 col-sm-6">
+                  <figure>
+                    <img
+                      src="{% static 'assets/images/gl-6.jpg' %}"
+                      alt=""
+                      class="img-responsive"
+                    />
+                    <figcaption>
+                      <span class="icon flaticon-signs"></span>
+                      <h4 class="title">Title goes here</h4>
+                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
+                      <a
+                        href="{% static 'assets/images/gl-6.jpg' %}"
+                        class="view-project-detail single_image"
+                      ></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!-- End: .each-item -->
+                <div class="ch-grid-item col-md-3 col-sm-6">
+                  <figure>
+                    <img
+                      src="{% static 'assets/images/gl-7.jpg' %}"
+                      alt=""
+                      class="img-responsive"
+                    />
+                    <figcaption>
+                      <span class="icon flaticon-signs"></span>
+                      <h4 class="title">Title goes here</h4>
+                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
+                      <a
+                        href="{% static 'assets/images/gl-7.jpg' %}"
+                        class="view-project-detail single_image"
+                      ></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!-- End: .each-item -->
+                <div class="ch-grid-item col-md-3 col-sm-6">
+                  <figure>
+                    <img
+                      src="{% static 'assets/images/gl-8.jpg' %}"
+                      alt=""
+                      class="img-responsive"
+                    />
+                    <figcaption>
+                      <span class="icon flaticon-signs"></span>
+                      <h4 class="title">Title goes here</h4>
+                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
+                      <a
+                        href="{% static 'assets/images/gl-8.jpg' %}"
+                        class="view-project-detail single_image"
+                      ></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <!-- End: .each-item -->
+              </div>
+              <!-- End: .ch-grid -->
+            </div>
+            <!-- End: .ch-grid -->
+          </div>
+        </div>
+        <!-- End: .row -->
+      </div>
+      <!-- End: .part-1 -->
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  MISSION
+        |========================
+        -->
+<section class="section ch-mission" id="ch-mission">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="section-title wow fadeIn" data-wow-delay="0.2s">
+        <h2>Our <span>Mission</span></h2>
+        <p>
+          Sed cursus elementum arcu vitae mollis. Curabitur vehicula egestas
+          libero.
+        </p>
+      </div>
+      <div class="ch-mission-content">
+        <div
+          class="col-md-4 col-sm-6 wow fadeInRight mission-item"
+          data-wow-delay="0.2s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-3 icon">
+              <i class="fa main-color flaticon-book"></i>
+            </div>
+            <div class="col-md-9 col-sm-9 padding-left-o">
+              <h4 class="margin-top-o">Charity for education</h4>
+              <p>
+                Phasellus et diam nec massa lobortis venenatis nullam varius.
+              </p>
+              <a href="#" class="main-color">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-4 col-sm-6 wow fadeInRight mission-item"
+          data-wow-delay="0.4s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-3 icon">
+              <i class="fa main-color flaticon-food"></i>
+            </div>
+            <div class="col-md-9 col-sm-9 padding-left-o">
+              <h4 class="margin-top-o">Feed for hungry child</h4>
+              <p>
+                Phasellus et diam nec massa lobortis venenatis nullam varius.
+              </p>
+              <a href="#" class="main-color">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-4 col-sm-6 wow fadeInRight mission-item"
+          data-wow-delay="0.6s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-3 icon">
+              <i class="fa main-color flaticon-internet"></i>
+            </div>
+            <div class="col-md-9 col-sm-9 padding-left-o">
+              <h4 class="margin-top-o">Home for the homeless</h4>
+              <p>
+                Phasellus et diam nec massa lobortis venenatis nullam varius.
+              </p>
+              <a href="#" class="main-color">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-4 col-sm-6 wow fadeInRight mission-item"
+          data-wow-delay="0.3s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-3 icon">
+              <i class="fa main-color flaticon-weather"></i>
+            </div>
+            <div class="col-md-9 col-sm-9 padding-left-o">
+              <h4 class="margin-top-o">Clean water for people</h4>
+              <p>
+                Phasellus et diam nec massa lobortis venenatis nullam varius.
+              </p>
+              <a href="#" class="main-color">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-4 col-sm-6 wow fadeInRight mission-item"
+          data-wow-delay="0.5s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-3 icon">
+              <i class="fa main-color flaticon-summer"></i>
+            </div>
+            <div class="col-md-9 col-sm-9 padding-left-o">
+              <h4 class="margin-top-o">Charity for entertain</h4>
+              <p>
+                Phasellus et diam nec massa lobortis venenatis nullam varius.
+              </p>
+              <a href="#" class="main-color">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-4 col-sm-6 wow fadeInRight mission-item"
+          data-wow-delay="0.8s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-3 icon">
+              <i class="fa flaticon-present main-color"></i>
+            </div>
+            <div class="col-md-9 col-sm-9 padding-left-o">
+              <h4 class="margin-top-o">Heart to heart event</h4>
+              <p>
+                Phasellus et diam nec massa lobortis venenatis nullam varius.
+              </p>
+              <a href="#" class="main-color">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  FAME
+        |========================
+        -->
+<section class="section ch-fame main-color-bg">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="col-md-6 join-v wow fadeInRight" data-wow-delay="0.2s">
+        <h3>Ready to became a Volanteer?</h3>
+        <p>
+          Phasellus et diam nec massa lobortis venenatis. Nullam varius enim at
+          eros ullamcorper semper.
+        </p>
+        <div class="join-btn">
+          <a href="#" class="btn btn-fill">Join Now</a>
+        </div>
+      </div>
+      <div class="col-md-6 fame-item wow fadeInLeft" data-wow-delay="0.2s">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <div class="vl-icon">
+              <i class="fa flaticon-trophy"></i>
+              <h3 class="number aw">767</h3>
+              <span class="text">Awared</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <div class="vl-icon">
+              <i class="fa flaticon-profile"></i>
+              <h3 class="number" id="aw">555</h3>
+              <span class="text">Volanteer</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <div class="vl-icon">
+              <i class="fa flaticon-graphic"></i>
+              <h3 class="number">555</h3>
+              <span class="text">Projects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  volanteer
+        |========================
+        -->
+
+<!--
+        |========================
+        |  testimonial
+        |========================
+        -->
+<section class="section ch-testimonial" id="ch-testimonial">
+  <div
+    class="container-half container-half-left cover-bg"
+    style="background-image: url(/static/assets/images/)"
+  ></div>
+  <div class="container-half container-half-right main-color-bg"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-4 client-quates">
+        <div class="section-title">
+          <h2>Clients Testimonial</h2>
+          <span>
+            Get a head-start with one of the included page demos or start
+            experimenting.</span
+          >
+        </div>
+        <div class="ch-client-testimonial">
+          <div class="slider-content wow">
+            <div
+              class="carousel xt-carousel-fade slide"
+              data-ride="carousel"
+              id="quote-carousel"
+            >
+              <div class="carousel-inner text-center">
+                <!-- Quote 1 -->
+                <div class="item active">
+                  <blockquote>
+                    <div class="row">
+                      <div class="">
+                        <p>
+                          If you find something that isn’t working right feel
+                          free to leave a comment or post on the issues tracker.
+                          If you have any interesting
+                        </p>
+
+                        <h3>Sam Andro <span>Manager</span></h3>
+                      </div>
+                    </div>
+                  </blockquote>
+                </div>
+                <!-- Quote 2 -->
+                <div class="item">
+                  <blockquote>
+                    <div class="row">
+                      <div class="">
+                        <p>
+                          Phasellus et diam nec massa lobortis venenatis. Nullam
+                          phasellus et diam udi ngnec massa lobortis venenatis
+                          ullamcorper semper.
+                        </p>
+                        <h3>Linux Wlis <span>CEO</span></h3>
+                      </div>
+                    </div>
+                  </blockquote>
+                </div>
+                <!-- Quote 3 -->
+                <div class="item">
+                  <blockquote>
+                    <div class="row">
+                      <div class="">
+                        <p>
+                          The lessc object can be configured through an
+                          assortment of instance methods. Some possible
+                          configuration options include venenatis
+                        </p>
+                        <h3>Becky Rand <span>Directer</span></h3>
+                      </div>
+                    </div>
+                  </blockquote>
+                </div>
+              </div>
+              <!-- Bottom Carousel Indicators -->
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#quote-carousel"
+                  data-slide-to="0"
+                  class="active"
+                >
+                  <img
+                    class="img-responsive"
+                    src="{% static 'assets/images/t.jpeg' %}"
+                    alt=""
+                  />
+                </li>
+                <li data-target="#quote-carousel" data-slide-to="1">
+                  <img
+                    class="img-responsive"
+                    src="{% static 'assets/images/s.jpg' %}"
+                    alt=""
+                  />
+                </li>
+                <li data-target="#quote-carousel" data-slide-to="2">
+                  <img
+                    class="img-responsive"
+                    src="{% static 'assets/images/g1.jpg' %}"
+                    alt=""
+                  />
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  CLIENT
+        |========================
+        -->
+<section class="section ch-client">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="section-title wow fadeIn" data-wow-delay="0.2s">
+        <h2>Featured <span>Clients</span></h2>
+        <span>
+          Get a head-start with one of the included page demos or start
+          experimenting.</span
+        >
+      </div>
+      <div class="ch-client-logos col-xs-12">
+        <ul>
+          <li class="wow fadeInUp" data-wow-delay="0.3s">
+            <img
+              src="{% static 'assets/images/fc1.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.5s">
+            <img
+              src="{% static 'assets/images/fc2.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.7s">
+            <img
+              src="{% static 'assets/images/fc3.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.9s">
+            <img
+              src="{% static 'assets/images/fc4.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="1.0s">
+            <img
+              src="{% static 'assets/images/fc5.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {% include 'partials/_contact.html'%}
+</section>
+{%endblock%}

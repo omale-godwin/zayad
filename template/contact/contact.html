@@ -1,0 +1,251 @@
+{% extends 'base.html'%} {% load static %} {% block content %}
+
+<section class="subpage header-section">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="sub-header-content">
+        <div class="col-md-6">
+          <h4>Contact us</h4>
+        </div>
+        <div class="col-md-6 subpage-nav">
+          <ol class="breadcrumb">
+            <li><a href="index-2.html">Home</a></li>
+            <li class="active">Contact Us</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  CONTACT
+        |========================
+        -->
+<section class="section ch-contact" id="ch-contact">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="ch-contact-content">
+        <div
+          class="col-md-4 col-sm-4 contact-item wow fadeInRight"
+          data-wow-delay="0.3s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-12 icon">
+              <i class="fa main-color flaticon-location"></i>
+            </div>
+            <div class="col-md-9 col-sm-12 padding-left-o">
+              <h4 class="margin-top-o">Office Location</h4>
+              <p class="main-color">754 Salt Lake City, Australia</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-4 col-sm-4 contact-item wow fadeInRight"
+          data-wow-delay="0.5s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-12 icon">
+              <i class="fa main-color flaticon-phone-call"></i>
+            </div>
+            <div class="col-md-9 col-sm-12 padding-left-o">
+              <h4 class="margin-top-o">Contact Info</h4>
+              <a href="#" class="main-color">+88 248 755 542 22</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-4 col-sm-4 contact-item wow fadeInRight"
+          data-wow-delay="0.7s"
+        >
+          <div class="row">
+            <div class="col-md-3 col-sm-12 icon">
+              <i class="fa main-color flaticon-mail"></i>
+            </div>
+            <div class="col-md-9 col-sm-12 padding-left-o">
+              <h4 class="margin-top-o">Mail Address</h4>
+              <a href="mailto:" class="main-color">hello@chearty.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  MAP
+        |========================
+        -->
+<div class="map" id="ch-map"></div>
+<!--
+        |========================
+        |  testimonial
+        |========================
+        -->
+<section class="section ch-testimonial" id="ch-testimonial">
+  <div
+    class="container-half container-half-left cover-bg"
+    style="background-image: url( 'static/assets/images/ch-testimonial.jpg)"
+  ></div>
+  <div class="container-half container-half-right main-color-bg"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-4 client-quates">
+        <div class="section-title">
+          <h2>Clients Testimonial</h2>
+          <span>
+            Get a head-start with one of the included page demos or start
+            experimenting.</span
+          >
+        </div>
+        <div class="ch-client-testimonial">
+          <div class="slider-content wow">
+            <div
+              class="carousel xt-carousel-fade slide"
+              data-ride="carousel"
+              id="quote-carousel"
+            >
+              <div class="carousel-inner text-center">
+                <!-- Quote 1 -->
+                <div class="item active">
+                  <blockquote>
+                    <div class="row">
+                      <div class="">
+                        <p>
+                          If you find something that isn’t working right feel
+                          free to leave a comment or post on the issues tracker.
+                          If you have any interesting
+                        </p>
+
+                        <h3>Sam Andro <span>Manager</span></h3>
+                      </div>
+                    </div>
+                  </blockquote>
+                </div>
+                <!-- Quote 2 -->
+                <div class="item">
+                  <blockquote>
+                    <div class="row">
+                      <div class="">
+                        <p>
+                          Phasellus et diam nec massa lobortis venenatis. Nullam
+                          phasellus et diam udi ngnec massa lobortis venenatis
+                          ullamcorper semper.
+                        </p>
+                        <h3>Linux Wlis <span>CEO</span></h3>
+                      </div>
+                    </div>
+                  </blockquote>
+                </div>
+                <!-- Quote 3 -->
+                <div class="item">
+                  <blockquote>
+                    <div class="row">
+                      <div class="">
+                        <p>
+                          The lessc object can be configured through an
+                          assortment of instance methods. Some possible
+                          configuration options include venenatis
+                        </p>
+                        <h3>Becky Rand <span>Directer</span></h3>
+                      </div>
+                    </div>
+                  </blockquote>
+                </div>
+              </div>
+              <!-- Bottom Carousel Indicators -->
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#quote-carousel"
+                  data-slide-to="0"
+                  class="active"
+                >
+                  <img
+                    class="img-responsive"
+                    src="{% static 'assets/images/s.jpeg' %}"
+                    alt=""
+                  />
+                </li>
+                <li data-target="#quote-carousel" data-slide-to="1">
+                  <img
+                    class="img-responsive"
+                    src="{% static 'assets/images/t.jpeg' %}"
+                    alt=""
+                  />
+                </li>
+                <li data-target="#quote-carousel" data-slide-to="2">
+                  <img
+                    class="img-responsive"
+                    src="{% static 'assets/images/s.jpeg' %}"
+                    alt=""
+                  />
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+        |========================
+        |  CLIENT
+        |========================
+        -->
+<section class="section ch-client">
+  <div class="container">
+    <div class="row section-separator">
+      <div class="section-title wow fadeIn" data-wow-delay="0.2s">
+        <h2>Featured <span>Clients</span></h2>
+        <span>
+          Get a head-start with one of the included page demos or start
+          experimenting.</span
+        >
+      </div>
+      <div class="ch-client-logos col-xs-12">
+        <ul>
+          <li class="wow fadeInUp" data-wow-delay="0.3s">
+            <img
+              src="{% static 'assets/images/fc1.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.5s">
+            <img
+              src="{% static 'assets/images/fc2.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.7s">
+            <img
+              src="{% static 'assets/images/fc3.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="0.9s">
+            <img
+              src="{% static 'assets/images/fc4.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="1.0s">
+            <img
+              src="{% static 'assets/images/fc5.png' %}"
+              alt=""
+              class="img-responsive"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% include 'partials/_contact.html'%}
+</section>
+{% endblock %}

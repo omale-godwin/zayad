@@ -183,7 +183,11 @@
                 </div>
               </div>
               <p>{{cause.description }}</p>
-              <button  onclick="payWithPaystack()" class="btn btn-border"> Donate Now</button>
+              <form method="POST" >
+                {% csrf_token %}
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <button type="button" onclick="payWithPaystack()"> DONATE NOW </button> 
+</form>
             </div>
           </div>
         </div>
@@ -319,10 +323,11 @@
                 id="project-gallery"
                 data-wow-delay="0.2s"
               >
+                {% if galary %} {% for gal in galary %}
                 <div class="ch-grid-item col-md-3 col-sm-6">
                   <figure>
                     <img
-                      src="{% static 'assets/images/gl-1.jpg' %}"
+                      src="{{gal.galary.url}}"
                       alt=""
                       class="img-responsive"
                     />
@@ -331,145 +336,18 @@
                       <h4 class="title">Title goes here</h4>
                       <p class="sub-title">Sed diam metus, facilisis eu diam</p>
                       <a
-                        href="{% static 'assets/images/gl-1.jpg' %}"
+                        href="{{gal.galary.url}}"
                         class="view-project-detail single_image"
                       ></a>
                     </figcaption>
                   </figure>
                 </div>
+                {% endfor %} {% else %}
+                <div class="center bg-warmimg">No GALARY FOUND</div>
+                {% endif %}
+
                 <!-- End: .each-item -->
-                <div class="ch-grid-item col-md-3 col-sm-6">
-                  <figure>
-                    <img
-                      src="{% static 'assets/images/gl-2.jpg' %}"
-                      alt=""
-                      class="img-responsive"
-                    />
-                    <figcaption>
-                      <span class="icon flaticon-signs"></span>
-                      <h4 class="title">Title goes here</h4>
-                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
-                      <a
-                        href="{% static 'assets/images/gl-2.jpg' %}"
-                        class="view-project-detail single_image"
-                      ></a>
-                    </figcaption>
-                  </figure>
-                </div>
-                <!-- End: .each-item -->
-                <div class="ch-grid-item col-md-3 col-sm-6">
-                  <figure>
-                    <img
-                      src="{% static 'assets/images/gl-3.jpg' %}"
-                      alt=""
-                      class="img-responsive"
-                    />
-                    <figcaption>
-                      <span class="icon flaticon-signs"></span>
-                      <h4 class="title">Title goes here</h4>
-                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
-                      <a
-                        href="{% static 'assets/images/gl-3.jpg' %}"
-                        class="view-project-detail single_image"
-                      ></a>
-                    </figcaption>
-                  </figure>
-                </div>
-                <!-- End: .each-item -->
-                <div class="ch-grid-item col-md-3 col-sm-6">
-                  <figure>
-                    <img
-                      src="{% static 'assets/images/gl-4.jpg' %}"
-                      alt=""
-                      class="img-responsive"
-                    />
-                    <figcaption>
-                      <span class="icon flaticon-signs"></span>
-                      <h4 class="title">Title goes here</h4>
-                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
-                      <a
-                        href="{% static 'assets/images/gl-4.jpg' %}"
-                        class="view-project-detail single_image"
-                      ></a>
-                    </figcaption>
-                  </figure>
-                </div>
-                <!-- End: .each-item -->
-                <div class="ch-grid-item col-md-3 col-sm-6">
-                  <figure>
-                    <img
-                      src="{% static 'assets/images/gl-5.jpg' %}"
-                      alt=""
-                      class="img-responsive"
-                    />
-                    <figcaption>
-                      <span class="icon flaticon-signs"></span>
-                      <h4 class="title">Title goes here</h4>
-                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
-                      <a
-                        href="{% static 'assets/images/gl-5.jpg' %}"
-                        class="view-project-detail single_image"
-                      ></a>
-                    </figcaption>
-                  </figure>
-                </div>
-                <!-- End: .each-item -->
-                <div class="ch-grid-item col-md-3 col-sm-6">
-                  <figure>
-                    <img
-                      src="{% static 'assets/images/gl-6.jpg' %}"
-                      alt=""
-                      class="img-responsive"
-                    />
-                    <figcaption>
-                      <span class="icon flaticon-signs"></span>
-                      <h4 class="title">Title goes here</h4>
-                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
-                      <a
-                        href="{% static 'assets/images/gl-6.jpg' %}"
-                        class="view-project-detail single_image"
-                      ></a>
-                    </figcaption>
-                  </figure>
-                </div>
-                <!-- End: .each-item -->
-                <div class="ch-grid-item col-md-3 col-sm-6">
-                  <figure>
-                    <img
-                      src="{% static 'assets/images/gl-7.jpg' %}"
-                      alt=""
-                      class="img-responsive"
-                    />
-                    <figcaption>
-                      <span class="icon flaticon-signs"></span>
-                      <h4 class="title">Title goes here</h4>
-                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
-                      <a
-                        href="{% static 'assets/images/gl-7.jpg' %}"
-                        class="view-project-detail single_image"
-                      ></a>
-                    </figcaption>
-                  </figure>
-                </div>
-                <!-- End: .each-item -->
-                <div class="ch-grid-item col-md-3 col-sm-6">
-                  <figure>
-                    <img
-                      src="{% static 'assets/images/gl-8.jpg' %}"
-                      alt=""
-                      class="img-responsive"
-                    />
-                    <figcaption>
-                      <span class="icon flaticon-signs"></span>
-                      <h4 class="title">Title goes here</h4>
-                      <p class="sub-title">Sed diam metus, facilisis eu diam</p>
-                      <a
-                        href="{% static 'assets/images/gl-8.jpg' %}"
-                        class="view-project-detail single_image"
-                      ></a>
-                    </figcaption>
-                  </figure>
-                </div>
+
                 <!-- End: .each-item -->
               </div>
               <!-- End: .ch-grid -->

@@ -8,9 +8,11 @@ def index(request):
 
     con = Causes.objects.all()[:3]
     cons = Event.objects.all()[:3]
+    gala = Galary.objects.all()
     context = {
         'causes': con,
-        'events': cons
+        'events': cons,
+         'galary': gala
     }
     return render(request, 'pages/index.html', context)
 

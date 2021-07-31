@@ -16,13 +16,15 @@
               <span aria-hidden="true" class="icon"></span>
             </button>
             <!-- page brand -->
-            <a class="navbar-brand" href="index-2.html"
-              ><img
+
+            <a class="navbar-brand" href="{% url 'index'%}">
+              <img
                 src="{% static 'assets/images/logo.png' %}"
                 alt=""
                 class="img-responsive"
             /></a>
           </div>
+
           <div class="collapse navbar-collapse" id="js-navbar-menu">
             <ul
               class="nav navbar-nav navbar-right ep-mobile-menu"
@@ -40,6 +42,26 @@
               <li><a href="{% url 'blog' %}">Blog </a></li>
 
               <li><a href="{% url 'contact' %}">Contact</a><span></span></li>
+              {% if user.is_authenticated %}
+              <li><a href="#">Welcome {{ user.first_name }} </a></li>
+              <li></li>
+              <li class="nav-item mr-3">
+                <a
+                  href="javascript:{document.getElementById('logout').submit()}"
+                  class="nav-link"
+                >
+                  <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+                <form action="{% url 'logout' %}" method="POST" id="logout">
+                  {% csrf_token %}
+                  <input type="hidden" />
+                </form>
+              </li>
+              {% else %}
+              <li><a href="{% url 'login' %}">Login</a><span></span></li>
+
+              <li><a href="{% url 'register' %}">Register</a><span></span></li>
+              {% endif %}
             </ul>
           </div>
         </div>

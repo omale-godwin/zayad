@@ -58,7 +58,13 @@
                 </div>
               </div>
               <p>{{cause.description }}</p>
-              <a href="#" class="btn btn-border"> Donate Now</a>
+              <form method="POST">
+                {% csrf_token %}
+                <script src="https://js.paystack.co/v1/inline.js"></script>
+                <button type="button" onclick="payWithPaystack()">
+                  DONATE NOW
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -112,7 +118,13 @@
           </p>
         </div>
         <div class="join-btn col-md-4 wow fadeInLeft" data-wow-delay="0.3s">
-          <a href="#" class="btn pull-right btn-fill">Donate Now</a>
+          <form method="POST">
+            {% csrf_token %}
+            <script src="https://js.paystack.co/v1/inline.js"></script>
+            <button type="button" onclick="payWithPaystack()">
+              DONATE NOW
+            </button>
+          </form>
         </div>
       </div>
     </div>
